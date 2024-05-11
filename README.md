@@ -1,5 +1,7 @@
-# ASCC-transcriptomics
+# ASCC-transcriptomics 
 Bioinformatics code used for Transcriptomic Portrait of ASCC
+![Screenshot from 2024-05-10 23-17-21](https://github.com/mabba777/ASCC-transcriptomics/assets/5058918/e5b2dc43-da64-40a3-84e2-00a9930be3e7)
+
 
 # 0- Data access from Gene Expression Omnibus
 The raw data have been submitted to NCBI GEO database with accession number GSE253560.
