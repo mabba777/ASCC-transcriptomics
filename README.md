@@ -8,6 +8,9 @@ The raw data have been submitted to NCBI GEO database with accession number GSE2
 The preprocessed host transcriptome data and the metatranscriptome are available at the data_matrix folder
 
 # 1- Metatranscriptomics analysis
+For metatranscriptomic analysis, the obtained RNA sequencing data were processed using the Biobakery suite of tools: KneadData was used to separate the human and the non-human reads; taxonomic profiling was performed using MetaPhlAn to identify and quantify microbial taxa at species level present in the anal samples.
+For determining the relative differential abundance and the multivariable association between subjects’ metadata and microbial features, we used the MaAsLin2 package from the bioBakery suite in R/Bioconductor.
+Metatranscriptomic pathway analysis was conducted using the HMP Unified Metabolic Analysis Network 3 (HUMAnN3) pipeline to investigate potential variations in metabolic pathways.
 
 # 2- Trascriptomics analysis of host gene expression
 
