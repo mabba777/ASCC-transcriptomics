@@ -20,3 +20,7 @@ merge_metaphlan_tables.py *_profile.txt > merged_abundance_table.txt
 # https://huttenhower.sph.harvard.edu/humann/
 # How to run HUMAnN 3.0
 humann -i File_kneaddata_paired_R1.fastq -i File_kneaddata_paired_R2.fastq -o /home/soporte/Escritorio/RNAseqAno2023/microbiome/humann_results --nucleotide-database ~/humann/databases/chocophlan --protein-database ~/humann/databases/uniref --threads 35
+#The results will be three main output files for each input file named:
+$SAMPLE_genefamilies.tsv
+$SAMPLE_pathabundance.tsv
+$SAMPLE_pathcoverage.tsv
