@@ -11,6 +11,10 @@ kneaddata --input File_R1.fastq.gz --input File_R2.fastq.gz --reference-db /home
 # https://huttenhower.sph.harvard.edu/metaphlan/
 # How to run MetaPhlAn
 metaphlan  File_kneaddata_paired_R1.fastq,File_kneaddata_paired_R2.fastq --input_type fastq --bowtie2out FileName.bz2 --add_viruses --nproc 35 > FileName_profile.txt
+# Output: set of files .bz2 and _profile.txt with the MetaPhlAn profiles (identified taxa and their abundances)
+# To merge MetaPhlAn profiles from multiple samples 
+merge_metaphlan_tables.py *_profile.txt > merged_abundance_table.txt
+
 
 # HUMAnN 3.0 is the next iteration of HUMAnN, the HMP Unified Metabolic Analysis Network. HUMAnN is a method for efficiently and accurately profiling the abundance of microbial metabolic pathways and other molecular functions from metagenomic or metatranscriptomic sequencing data.
 # https://huttenhower.sph.harvard.edu/humann/
