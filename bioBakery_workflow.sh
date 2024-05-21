@@ -24,3 +24,25 @@ humann -i File_kneaddata_paired_R1.fastq -i File_kneaddata_paired_R2.fastq -o /h
 $SAMPLE_genefamilies.tsv
 $SAMPLE_pathabundance.tsv
 $SAMPLE_pathcoverage.tsv
+
+# Normalize the $SAMPLE_genefamilies.tsv abundance output files
+#   Basic usage: 
+#	$ humann_renorm_table --input $TABLE --units $CHOICE --output $TABLE2
+#   $TABLE = gene/pathway table (tsv format)
+#   $CHOICE = "relab" (relative abundance) or "cpm" (copies per million)
+#   $TABLE2 = normalized gene/pathway table
+#   Run with -h to see additional command line options
+#!/bin/bash
+for f in *_genefamilies.tsv
+	do echo "Processing genefamilies $f file.."
+humann_renorm_table --input "$f" --output "$f"_genefamilies_relab.tsv --units relab
+done
+for f in *_pathabundance.tsv
+	do echo "Processing pathabundaces $f file.."
+humann_renorm_table --input "$f" --output "$f"_pathabundance_relab.tsv --units relab
+done
+
+#El output es el nombre del archivo joined, --file_name es el tipo de file a joinear
+$ humann_join_tables --input ~/Escritorio/RNAseqAno2023/microbiome/humann_results --output all_normalizedgenefamilies_relab.tsv --file_name _genefamilies_relab.tsv
+$ humann_join_tables --input ~/Escritorio/RNAseqAno2023/microbiome/humann_results --output all_pathcoverage.tsv --file_name _pathcoverage.tsv
+$ humann_join_tables --input ~/Escritorio/RNAseqAno2023/microbiome/humann_results --output all_normalizedpathabundance_relab.tsv --file_name _pathabundance_relab.tsv
